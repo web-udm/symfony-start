@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  php:
+    build: .
+    container_name: symfony_start-php
+    volumes:
+      - .:/var/www
+    ports:
+      - 9000:9000
