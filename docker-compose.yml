@@ -8,4 +8,14 @@ services:
       - .:/var/www
     ports:
       - 80:80
+  database:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: main
+    ports: [5432]
+
+
+
 ##TODO запилить сюды nginx, а то не могу подключитсья к серверу Symfony через контейнер
