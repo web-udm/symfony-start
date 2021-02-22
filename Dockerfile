@@ -14,4 +14,9 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 	&& php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
 	&& php -r "unlink('composer-setup.php');"
 
+#postgres
+RUN apk --update add postgresql-dev \
+	&& docker-php-ext-install pgsql \
+	&& docker-php-ext-install pdo_pgsql
+
 COPY ./ ./

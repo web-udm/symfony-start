@@ -9,6 +9,7 @@ services:
     ports:
       - 80:80
   database:
+    container_name: symfony_start-post
     image: postgres:13-alpine
     environment:
       POSTGRES_USER: root
