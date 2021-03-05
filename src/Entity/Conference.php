@@ -10,7 +10,6 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
  * @ORM\Entity(repositoryClass=ConferenceRepository::class)
- * @ORM\HasLifecycleCallbacks()
  */
 class Conference
 {
@@ -139,12 +138,9 @@ class Conference
         return $this;
     }
 
-    /**
-     * @ORM\PrePersist
-     */
     public function computeSlug(SluggerInterface $slugger)
     {
-        if (!$this->slug || $this->slug === '-' || $this->slug === '---') {
+        if (!$this->slug || $this->slug === '-') {
             $this->slug = (string) $slugger->slug((string) $this)->lower();
         }
     }
