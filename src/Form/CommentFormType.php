@@ -27,6 +27,10 @@ class CommentFormType extends AbstractType
                     new Image(['maxSize' => '1024k'])
                 ],
             ])
+            ->add('email', EmailType::class, [
+                'required' => true,
+                'label' => 'e-mail',
+            ])
             ->add('submit', SubmitType::class);
     }
 
