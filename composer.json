@@ -1,4 +1,6 @@
 {
+    "name": "web-udm/symfony-start",
+    "description": "Изучение фреймворка Symfony",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "dev",
