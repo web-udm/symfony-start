@@ -50,7 +50,7 @@ class ConferenceController extends AbstractController
             $this->entityManager->persist($comment);
             $this->entityManager->flush();
 
-            return $this->redirectToRoute("conference/1", ['slug' => $conference->getSlug()]);
+            return $this->redirectToRoute("conference", ['id' => $conference->getId()]);
         }
 
         $offset = max(0, $request->query->getInt('offset', 0));
