@@ -28,8 +28,8 @@ services:
             POSTGRES_USER: root
             POSTGRES_PASSWORD: root
             POSTGRES_DB: main
-        #volumes:
-           # - ./database:/var/lib/postgresql/data
+        volumes:
+            - ./database:/var/lib/postgresql/data
         ports:
             - 5432:5432
     redis:
