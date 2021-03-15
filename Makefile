@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 up:
 	docker-compose up -d
 
@@ -13,3 +15,9 @@ symfony-install:
 	docker exec symfony_start-php mv $(ls -a) ../
 	docker exec symfony_start-php cd ../
 	docker exec symfony_start-php rm -r guestbook
+
+tests:
+	symfony console doctrine:fixtures:load -n
+	symfony php bin/phpunit
+
+.PHONY: tests
